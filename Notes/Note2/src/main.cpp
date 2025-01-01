@@ -1,6 +1,12 @@
 #include <iostream>
+#include <ctime>
+#include <iomanip>
+using namespace std;
 
-int main(int argc, char *argv[])
+int main()
 {
-    std::cout << "Hello world!" << std::endl;
+    time_t t = time(nullptr);
+    tm local = *localtime(&t);
+    cin >> get_time(&local, "%H:%M");
+    cout << asctime(&local) << endl;
 }
